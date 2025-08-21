@@ -1,10 +1,10 @@
 import React from 'react'
 import Home from '../Page/Home'
 
-function Layout() {
+function Layout({ clone, setClone, toggleClone }) {
   return (
-    <div>
-      <Home />
+    <div className='w-full h-full'>
+      <Home clone={clone} setClone={setClone} toggleClone={toggleClone}/>
     </div>
   )
 }
