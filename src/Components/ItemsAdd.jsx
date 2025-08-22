@@ -18,12 +18,11 @@ function ItemsAdd({ clone, toggleClone }) {
   const handlingCharge = 2;
   const smallCartCharge = 20;
   const total =
-    itemPrice * quantity + deliveryCharge + handlingCharge + smallCartCharge;
-
+    itemPrice * quantity + deliveryCharge + handlingCharge + smallCartCharge;    
   return (
     <div
       className={
-        `w-full h-screen bg-[#00000087] fixed top-0 left-0 z-50 transition-opacity duration-300 max-lg:px-8` +
+        `w-full h-screen bg-[#00000087] fixed top-0 left-0 z-50 transition-opacity duration-300` +
         (clone ? " opacity-100" : " opacity-0") +
         " " +
         (clone ? "pointer-events-auto" : "pointer-events-none")
@@ -31,7 +30,7 @@ function ItemsAdd({ clone, toggleClone }) {
     >
       <div className="w-[25rem] max-sm:w-full absolute right-0 top-0 h-full bg-zinc-100 shadow-lg transform transition-transform duration-300 ease-in-out px-4">
         {/* Header */}
-        <div className="flex justify-between items-center rounded-md p-4 border-b border-gray-200 max-sm:fixed max-sm:top-0 max-sm:left-0 max-sm:w-full bg-white">
+        <div className="flex justify-between items-center rounded-md p-4 border-b border-gray-200 max-sm:fixed max-sm:top-0 max-sm:left-0 max-sm:w-full bg-white mt-4">
           <h2 className="text-md font-semibold text-gray-800">My Cart</h2>
           <button
             onClick={toggleClone}
@@ -41,7 +40,6 @@ function ItemsAdd({ clone, toggleClone }) {
           </button>
         </div>
 
-        {/* Delivery Estimate Card */}
         <div className="p-4 bg-white border-b border-gray-100 mt-3 rounded-xl max-sm:mt-20">
           <div className="flex items-center gap-2 mb-2">
             <svg
@@ -67,7 +65,6 @@ function ItemsAdd({ clone, toggleClone }) {
           </div>
         </div>
 
-        {/* Product Card */}
         <div className="p-4 bg-white border-b border-gray-100 mt-3 rounded-xl">
           <div className="flex items-start gap-3">
             <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center">
@@ -106,7 +103,6 @@ function ItemsAdd({ clone, toggleClone }) {
           </div>
         </div>
 
-        {/* Bill Details */}
         <div className="p-4 bg-white border-b border-gray-100 rounded-xl mt-3">
           <h3 className="font-bold text-gray-800 mb-3">Bill details</h3>
 
@@ -237,7 +233,6 @@ function ItemsAdd({ clone, toggleClone }) {
           </div>
         </div>
 
-        {/* Cancellation Policy */}
         <div className="p-4 bg-white border-b border-gray-100 rounded-xl mt-3">
           <h3 className="font-bold text-gray-800 mb-2">Cancellation Policy</h3>
           <p className="text-gray-600 text-[13px]">
@@ -245,31 +240,30 @@ function ItemsAdd({ clone, toggleClone }) {
             unexpected delays, a refund will be provided, if applicable.
           </p>
         </div>
-      </div>
 
-      {/* Bottom Checkout Bar */}
-      <div className="w-[90%] rounded-md absolute bottom-4 left-0 m-auto right-0 bg-green-600 p-2">
-        <div className="flex justify-between items-center">
-          <div>
-            <p className="text-white text-sm font-bold">{total}</p>
-            <p className="text-white text-[10px] opacity-90">TOTAL</p>
+        <div className="w-[90%] rounded-md absolute bottom-4 left-0 m-auto right-0 bg-green-600 p-2">
+          <div className="flex justify-between items-center">
+            <div>
+              <p className="text-white text-sm font-bold">{total}</p>
+              <p className="text-white text-[10px] opacity-90">TOTAL</p>
+            </div>
+            <button className="text-white px-6 py-3 rounded-lg font-semibold flex items-center gap-2 transition-colors">
+              Login to Proceed
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
           </div>
-          <button className="text-white px-6 py-3 rounded-lg font-semibold flex items-center gap-2 transition-colors">
-            Login to Proceed
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </button>
         </div>
       </div>
     </div>
