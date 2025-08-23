@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { ProductsItems } from "../Data/ProductsItems";
 import { Pagination, Navigation } from 'swiper/modules';
+import { Link } from "react-router-dom";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -33,7 +34,8 @@ function Rolling() {
         >
           <i className="ri-arrow-right-s-line text-2xl"></i>
         </button>
-        <Swiper
+        <Link to={"/card"}>
+            <Swiper
           slidesPerView={6}
           spaceBetween={30}
 
@@ -43,22 +45,26 @@ function Rolling() {
             nextEl: nextRef.current,
           }}
           breakpoints={{
-            400: {
-              slidesPerView: 1,
-              spaceBetween: 20,
-            },
-            640: {
-              slidesPerView: 2,
-              spaceBetween: 20,
-            },
-            768: {
-              slidesPerView: 3,
-              spaceBetween: 40,
-            },
-            1024: {
-              slidesPerView: 5,
-              spaceBetween: 50,
-            },
+           300: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              400: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 3,
+                spaceBetween: 40,
+              },
+              1024: {
+                slidesPerView: 5,
+                spaceBetween: 50,
+              },
           }}
           onBeforeInit={(swiper) => {
             // Assign navigation elements
@@ -88,6 +94,7 @@ function Rolling() {
             </SwiperSlide>
           ))}
         </Swiper>
+        </Link>
       </div>
     </div>
   );
