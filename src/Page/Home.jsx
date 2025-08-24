@@ -28,9 +28,9 @@ function Home({ clone, setClone, toggleClone }) {
       <Topbar />
       <Category />
       <Dairy />
-      <Rolling />
       <Hookah />
       <ColdDrinks />
+      <Rolling />
       <ItemsAdd clone={clone} setClone={setClone} toggleClone={toggleClone} />
     </>
   );

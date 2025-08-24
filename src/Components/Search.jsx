@@ -17,7 +17,6 @@ function Search() {
 
   return (
     <div className="relative w-1/2">
-      {/* Search Box */}
       <div className="bg-zinc-100 py-3 px-5 flex items-center gap-2 rounded-xl hover:bg-zinc-200 transition-all duration-300">
         <i className="ri-search-line"></i>
         <input
@@ -29,7 +28,6 @@ function Search() {
         />
       </div>
 
-      {/* Results Dropdown */}
       {term && (
         <div className="absolute top-full left-0 w-full bg-white shadow-lg rounded-lg mt-2 max-h-[30rem] overflow-y-auto z-50">
           {items.length === 0 ? (

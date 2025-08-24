@@ -3,7 +3,7 @@ import { categoryItem } from "../Data/Category";
 
 function Category() {
   return (
-    <div className="w-full h-full px-22 max-lg:px-0 max-sm:px-2 py-3 flex items-center justify-center flex-wrap">
+    <div className="w-full h-full px-[2rem] max-lg:px-0 max-sm:px-2 py-3 flex items-center justify-center flex-wrap">
       {categoryItem.map((items, idx) => (
         <div key={idx} className="flex items-center flex-wrap">
            <div  className="w-full flex items-center cursor-pointer justify-between flex-wrap gap-10">
