@@ -293,24 +293,24 @@ const Footer = () => {
             <div className="flex items-center space-x-4">
               <span className="font-semibold text-gray-700">Download App</span>
               <a href="#">
-                <i class="ri-apple-fill"></i>
+                <i className="ri-apple-fill"></i>
               </a>
               <a href="#">
-                <i class="ri-google-play-fill"></i>
+                <i className="ri-google-play-fill"></i>
               </a>
             </div>
             <div className="flex space-x-4 mt-2 sm:mt-0">
               <a href="#" aria-label="Facebook">
-                <i class="ri-facebook-circle-fill"></i>
+                <i className="ri-facebook-circle-fill"></i>
               </a>
               <a href="#" aria-label="X (Twitter)">
-                <i class="ri-twitter-x-fill"></i>
+                <i className="ri-twitter-x-fill"></i>
               </a>
               <a href="#" aria-label="Instagram">
-                <i class="ri-instagram-line"></i>
+                <i className="ri-instagram-line"></i>
               </a>
               <a href="#" aria-label="LinkedIn">
-                <i class="ri-linkedin-box-fill"></i>
+                <i className="ri-linkedin-box-fill"></i>
               </a>
             </div>
           </div>

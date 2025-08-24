@@ -18,7 +18,7 @@ function ItemsAdd({ clone, toggleClone }) {
   const handlingCharge = 2;
   const smallCartCharge = 20;
   const total =
-    itemPrice * quantity + deliveryCharge + handlingCharge + smallCartCharge;    
+    itemPrice * quantity + deliveryCharge + handlingCharge + smallCartCharge;
   return (
     <div
       className={
@@ -36,7 +36,7 @@ function ItemsAdd({ clone, toggleClone }) {
             onClick={toggleClone}
             className="text-gray-500 hover:text-gray-700 text-2xl font-bold"
           >
-            <i class="ri-close-line"></i>
+            <i className="ri-close-line"></i>
           </button>
         </div>
 

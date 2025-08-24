@@ -444,3 +444,73 @@ export const ProductsItems = {
     },
   ],
 };
+
+// Utility function to create unified products with consistent properties
+export const createUnifiedProducts = () => {
+  const unifiedProducts = [];
+  let globalId = 1;
+
+  // Process ProductOne
+  ProductsItems.ProductOne.forEach(product => {
+    unifiedProducts.push({
+      ...product,
+      globalId: globalId++,
+      category: 'ProductOne',
+      // Normalize properties
+      size: product.size,
+      deliveryTime: product.deliveryTime,
+      ali: product.ali,
+      price: product.price,
+      image: `/${product.image.replace('./', '')}` // Fix image path
+    });
+  });
+
+  // Process ProductTwo
+  ProductsItems.ProductTwo.forEach(product => {
+    unifiedProducts.push({
+      ...product,
+      globalId: globalId++,
+      category: 'ProductTwo',
+      // Normalize properties
+      size: product.size,
+      deliveryTime: product.time,
+      ali: product.ali,
+      price: product.price,
+      image: `/${product.image.replace('./', '')}` // Fix image path
+    });
+  });
+
+  // Process ProductThere
+  ProductsItems.ProductThere.forEach(product => {
+    unifiedProducts.push({
+      ...product,
+      globalId: globalId++,
+      category: 'ProductThere',
+      // Normalize properties - map quantity to size, time to deliveryTime
+      size: product.quantity,
+      deliveryTime: product.time,
+      ali: false, // ProductThere doesn't have ali property
+      price: product.price,
+      image: `/${product.image.replace('./', '')}` // Fix image path
+    });
+  });
+
+  // Process ProductFour
+  ProductsItems.ProductFour.forEach(product => {
+    unifiedProducts.push({
+      ...product,
+      globalId: globalId++,
+      category: 'ProductFour',
+      // Normalize properties - map volume to size, delivery_time to deliveryTime
+      size: product.volume,
+      deliveryTime: product.delivery_time,
+      ali: false, // ProductFour doesn't have ali property
+      price: product.price,
+      originalPrice: product.original_price,
+      discount: product.discount,
+      image: `/${product.image.replace('./', '')}` // Fix image path
+    });
+  });
+
+  return unifiedProducts;
+};

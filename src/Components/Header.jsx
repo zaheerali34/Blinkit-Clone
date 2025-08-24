@@ -2,6 +2,7 @@ import React from "react";
 import Logo from "../assets/logo.png";
 import "remixicon/fonts/remixicon.css";
 import { Link } from "react-router-dom";
+import Search from "./Search";
 
 function Header({ clone, setClone, toggleClone }) {
   const handleCloneToggle = () => {
@@ -18,14 +19,7 @@ function Header({ clone, setClone, toggleClone }) {
         />
       </Link>
 
-      <div className="w-1/2 bg-zinc-100 py-4 px-6 flex items-center gap-2 rounded-xl hover:bg-zinc-200 transition-all duration-300 max-md:hidden">
-        <i className="ri-search-line"></i>
-        <input
-          type="text"
-          placeholder="Search..."
-          className=" border-transparent w-full outline-none"
-        />
-      </div>
+      <Search />
 
       <div className="flex items-center gap-8 max-sm:gap-4">
         <button className="text-xl  cursor-pointer max-sm:text-[15px]">

@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { ProductsItems } from "../Data/ProductsItems";
+import { createUnifiedProducts } from "../Data/ProductsItems";
 import { Pagination, Navigation } from "swiper/modules";
 import { Link } from "react-router-dom";
 
@@ -11,6 +11,8 @@ import "swiper/css/navigation";
 function ColdDrinks() {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+
+  const allProducts = createUnifiedProducts().filter(product => product.category === 'ProductFour');
 
   return (
     <div className="w-full py-6 px-22 max-lg:px-8">
@@ -34,7 +36,8 @@ function ColdDrinks() {
         >
           <i className="ri-arrow-right-s-line text-2xl"></i>
         </button>
-        <Link to={"/card"}>
+        {/* Removing the outer Link component to allow individual product links */}
+        {/* <Link to={"/card"}> */}
           <Swiper
             slidesPerView={6}
             spaceBetween={30}
@@ -72,29 +75,31 @@ function ColdDrinks() {
             }}
             className="w-full mySwiper flex items-center justify-between"
           >
-            {ProductsItems.ProductFour.map((items, idx) => (
+            {allProducts.map((item, idx) => (
               <SwiperSlide
-                key={items.id || idx}
+                key={item.globalId || idx}
                 className="w-[100px] cursor-pointer bg-white shadow-md shadow-zinc-200 px-4 py-6"
               >
-                <img src={items.image} alt="" className="w-[120px] m-auto" />
-                <span className="font-semibold text-[12px] text-gray-900">
-                  {items.delivery_time}
-                </span>
-                <p className="font-bold text-sm py-2">{items.name}</p>
-                <span className="font-semibold text-[12px] text-gray-900">
-                  {items.size}
-                </span>
-                <div className="w-full flex items-center justify-between">
-                  <h4 className="font-semibold">$ {items.price}</h4>
-                  <button className="border border-green-500 py-2 px-6 rounded-md uppercase font-semibold text-green-500">
-                    Add
-                  </button>
-                </div>
+                <Link to={`/showitem/${item.globalId}`}>
+                  <img src={item.image} alt={item.name} className="w-[120px] m-auto" />
+                  <span className="font-semibold text-[12px] text-gray-900">
+                    {item.deliveryTime}
+                  </span>
+                  <p className="font-bold text-sm py-2">{item.name}</p>
+                  <span className="font-semibold text-[12px] text-gray-900">
+                    {item.size}
+                  </span>
+                  <div className="w-full flex items-center justify-between">
+                    <h4 className="font-semibold">{item.price}</h4>
+                    <button className="border border-green-500 py-2 px-6 rounded-md uppercase font-semibold text-green-500">
+                      Add
+                    </button>
+                  </div>
+                </Link>
               </SwiperSlide>
             ))}
           </Swiper>
-        </Link>
+        {/* </Link> */}
       </div>
     </div>
   );

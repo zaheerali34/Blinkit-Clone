@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import itemSlice from "../Features/itemSlice";
+import SearchSlice from "../Features/SearchSlice";
 
 export const store = configureStore({
   reducer: {
-    cartItem: itemSlice,
+    search: SearchSlice,
   },
 });

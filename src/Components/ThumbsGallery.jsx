@@ -84,6 +84,11 @@ function ThumbsGallery() {
             slidesPerView: 2,
             spaceBetween: 20,
           },
+
+          1080: {
+            slidesPerView: 4,
+            spaceBetween: 20,
+          },
         }}
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}
